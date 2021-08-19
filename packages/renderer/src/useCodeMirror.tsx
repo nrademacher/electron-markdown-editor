@@ -14,12 +14,11 @@ import {
 import { markdown, markdownLanguage } from '@codemirror/lang-markdown'
 import { languages } from '@codemirror/language-data'
 import { oneDark } from '@codemirror/theme-one-dark'
-// import { javascript } from '@codemirror/lang-javascript'
 import type React from 'react'
 
-export const transparentTheme = EditorView.theme({
+export const bgTheme = EditorView.theme({
   '&': {
-    backgroundColor: 'transparent !important',
+    backgroundColor: 'rgb(40,44,52) !important',
     height: '100%'
   }
 })
@@ -74,7 +73,7 @@ const useCodeMirror = <T extends Element>(
           addKeymap: true
         }),
         oneDark,
-        transparentTheme,
+        bgTheme,
         syntaxHighlighting,
         EditorView.lineWrapping,
         EditorView.updateListener.of(update => {
